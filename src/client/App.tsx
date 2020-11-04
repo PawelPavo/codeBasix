@@ -1,27 +1,22 @@
 import * as React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { GlobalStyles } from './utils/styles/global-style';
+import Home from './views/Home';
 
 const App = (props: AppProps) => {
-	const [greeting, setGreeting] = React.useState<string>('');
-
-	React.useEffect(() => {
-		(async () => {
-			try {
-				const res = await fetch('/api/sup');
-				const greeting = await res.json();
-				setGreeting(greeting);
-			} catch (error) {
-				console.log(error);
-			}
-		})();
-	}, []);
 
 	return (
-		<div className="min-vh-100 d-flex justify-content-center align-items-center">
-			<h1 className="display-1">Sup {greeting}!</h1>
-		</div>
-	);
+		<BrowserRouter>
+			<GlobalStyles />
+			<Switch>
+				<Route exact path="/">
+					<Home />
+				</Route>
+			</Switch>
+		</BrowserRouter>
+	)
 };
 
-interface AppProps {}
+interface AppProps { }
 
 export default App;
