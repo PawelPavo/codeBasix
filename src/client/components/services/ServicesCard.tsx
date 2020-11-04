@@ -13,37 +13,40 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
     const [show2, setShow2] = React.useState(false);
     return (
         <Layout>
-            <div
-                onClick={() => setShow2(!show2)}
-                className="col-md-12 border my-2 font-weight-lighter bg-primary text-light">
-                <div className="card-body">
-                    <div className="row justify-content-between">
-                        <div className="col-3">
-                            <IconContext.Provider value={{ style: { fontSize: '30px', color: "white" } }}>
-                                <div>
-                                    {props.service.id === 1 ? <FaPalette /> : ''}
-                                    {props.service.id === 2 ? <FaPeopleCarry /> : ''}
-                                    {props.service.id === 3 ? <FaMobileAlt /> : ''}
-                                    {props.service.id === 4 ? <BsGraphUp /> : ''}
-                                    {props.service.id === 5 ? <FaCode /> : ''}
-                                </div>
-                            </IconContext.Provider>
-                        </div>
-                        <div className="col-7">
-                            <h5
-                                className="card-title my-auto font-weight-lighter "> {props.service.name}
-                            </h5>
-                        </div>
-                        <h5>
-                            {show2 ? <AiOutlineMinus /> : <AiOutlinePlus />}
-                        </h5>
+            <Slide left cascade>
 
-                        <div className={`showContent ${show2 ? 'showContent showContent-active' : ''}`}>
-                            <p className="card-text mt-2">{props.service.description}</p>
+                <div
+                    onClick={() => setShow2(!show2)}
+                    className="col-md-12 border my-3 font-weight-lighter bg-primary text-light cardHover shadow">
+                    <div className="card-body">
+                        <div className="row justify-content-between">
+                            <div className="col-3">
+                                <IconContext.Provider value={{ style: { fontSize: '30px', color: "white" } }}>
+                                    <div>
+                                        {props.service.id === 1 ? <FaPalette /> : ''}
+                                        {props.service.id === 2 ? <FaPeopleCarry /> : ''}
+                                        {props.service.id === 3 ? <FaMobileAlt /> : ''}
+                                        {props.service.id === 4 ? <BsGraphUp /> : ''}
+                                        {props.service.id === 5 ? <FaCode /> : ''}
+                                    </div>
+                                </IconContext.Provider>
+                            </div>
+                            <div className="col-7">
+                                <h5
+                                    className="card-title my-auto font-weight-lighter "> {props.service.name}
+                                </h5>
+                            </div>
+                            <h5>
+                                {show2 ? <AiOutlineMinus /> : <AiOutlinePlus />}
+                            </h5>
+
+                            <div className={`showContent ${show2 ? 'showContent showContent-active' : ''}`}>
+                                <p className="card-text mt-3">{props.service.description}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Slide>
         </Layout>
     )
 }
@@ -60,6 +63,12 @@ const Layout = styled.div`
 .showContent-active {
     height: 200px;
     opacity: 1;
+}
+
+.cardHover:hover {
+    border-color:rgb(192, 180, 180) !important;
+    box-shadow: 0 0 30px rgba(33,33,33,.8) !important;
+    transition: 0.5s;
 }
 
 `
