@@ -38,7 +38,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
     return (
         <Layout>
-            <main className="container h-75">
+            <main className="container h-100">
                 <div className="row">
                     <div className="col-md-12 mt-5">
                         <Slide right>
@@ -56,20 +56,6 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
                     </div>
                 </Slide>
             </main>
-            <div className="container h-25">
-                <div className="row">
-                    <div className="col align-self-end mt-5 text-right">
-                        <IconContext.Provider value={{ style: { fontSize: '60px' } }}>
-                            <a href="#home" className="text-secondary">
-                                <FaChevronUp />
-                            </a>
-                            <a href="#about" className="text-secondary">
-                                <FaChevronDown />
-                            </a>
-                        </IconContext.Provider>
-                    </div>
-                </div>
-            </div>
         </Layout>
     )
 }
