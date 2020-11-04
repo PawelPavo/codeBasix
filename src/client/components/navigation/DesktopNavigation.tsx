@@ -10,14 +10,12 @@ const DesktopNavigation: React.FC<IDesktopNavigationProps> = (props) => {
                 <Slide top>
                     <div className="row">
                         <div className="col-md-4 mt-3">
-                            <a href="#home">
-                                <embed
-                                    className="img-fluid mobile-logo"
-                                    style={{ height: "auto", width: "225px" }}
-                                    type="image/svg+xml"
-                                    src="https://news-api.s3.us-east-2.amazonaws.com/codeBasixLogo.svg"
-                                />
-                            </a>
+                            <embed
+                                className="img-fluid mobile-logo"
+                                style={{ height: "auto", width: "225px" }}
+                                type="image/svg+xml"
+                                src="https://news-api.s3.us-east-2.amazonaws.com/codeBasixLogo.svg"
+                            />
                         </div>
                         <div className="col-md-8 my-auto">
                             <div className="row justify-content-end">
@@ -59,10 +57,6 @@ const Layout = styled.div`
     color: #07407b;
 }
 
-.nav-text:hover { 
-    color: #f8a320;
-}
-
 a.left {
     position: relative !important;
 }
@@ -74,7 +68,7 @@ a.left:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: red;
+  background-color: #ff5c5c;
   visibility: hidden;
   transition: all 0.5s ease-in-out;
 }

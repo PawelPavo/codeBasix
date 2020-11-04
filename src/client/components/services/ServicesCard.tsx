@@ -19,7 +19,7 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
                     <div className="card-body">
                         <div className="row justify-content-between">
                             <div className="col-3 icon">
-                                <IconContext.Provider value={{ style: { fontSize: '30px', color: "#f8a320" } }}>
+                                <IconContext.Provider value={{ style: { fontSize: '30px', color: "#ffbd4a" } }}>
                                     <div>
                                         {props.service.id === 1 ? <FaPalette /> : ''}
                                         {props.service.id === 2 ? <FaPeopleCarry /> : ''}
@@ -34,7 +34,7 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
                                     className="card-title my-auto font-weight-lighter "> {props.service.name}
                                 </h5>
                             </div>
-                            <h5 >
+                            <h5 style={{color: "#2fb1ff"}}>
                                 {show2 ? <AiOutlineMinus /> : <AiOutlinePlus />}
                             </h5>
 
@@ -66,7 +66,7 @@ const Layout = styled.div`
 .cardHover:hover {
     border-color:rgb(192, 180, 180) !important;
     box-shadow: 0 0 30px rgba(33,33,33,1) !important;
-    transition: 0.75s;
+    transition: all 0.75s ease-in-out;
 }
 .icon {
     color: #f8a320;
