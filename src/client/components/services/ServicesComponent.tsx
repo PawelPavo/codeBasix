@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Switch } from 'react-router';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
 import styled from 'styled-components';
 import ServicesCard from './ServicesCard';
 
@@ -28,7 +29,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
     return (
         <Layout>
-            <main className="container h-100">
+            <main className="container h-75">
                 <div className="row">
                     <div className="col-md-12 mt-5">
                         <Slide right>
@@ -46,6 +47,18 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
                     </div>
                 </Slide>
             </main>
+            <div className=" container h-25">
+                <div className="row justify-content-end">
+                    <IconContext.Provider value={{ style: { fontSize: '60px' } }}>
+                        <a href="#home" className="text-secondary">
+                            <FaChevronUp />
+                        </a>
+                        <a href="#about" className="text-secondary">
+                            <FaChevronDown />
+                        </a>
+                    </IconContext.Provider>
+                </div>
+            </div>
         </Layout>
     )
 }
@@ -55,8 +68,7 @@ const Layout = styled.div`
     @media not all and (min-width: 768px) {
       font-size: 50px;
     }
-  }
-
+}
 `
 
 export interface IServicesComponentProps { }
