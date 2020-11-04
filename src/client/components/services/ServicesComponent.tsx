@@ -18,7 +18,8 @@ const Services = [
     },
     {
         id: 3,
-        name: "Responsive and Mobile-Ready",
+        name: "Responsive",
+        icon: "FaMobileAlt",
         description: "With over 60% of website traffic coming from mobile devices, having a responsive website is a must! All our websites come mobile-ready to provide the best user experience.",
     },
 ];
