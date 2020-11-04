@@ -6,7 +6,6 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { FaMobileAlt, FaPeopleCarry, FaPalette, FaCode } from 'react-icons/fa';
 import { IServices } from '../../utils/interfaces';
 
-
 const Slide = require('react-reveal/Zoom')
 
 const ServicesCard: React.FC<ServicesCardProps> = (props) => {
@@ -14,14 +13,13 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
     return (
         <Layout>
             <Slide left cascade>
-
                 <div
                     onClick={() => setShow2(!show2)}
-                    className="col-md-12 border my-3 font-weight-lighter bg-primary text-light cardHover shadow">
+                    className="col-md-12 border my-3 font-weight-lighter bg-custom-service-card-bg text-light cardHover shadow">
                     <div className="card-body">
                         <div className="row justify-content-between">
-                            <div className="col-3">
-                                <IconContext.Provider value={{ style: { fontSize: '30px', color: "white" } }}>
+                            <div className="col-3 icon">
+                                <IconContext.Provider value={{ style: { fontSize: '30px', color: "#f8a320" } }}>
                                     <div>
                                         {props.service.id === 1 ? <FaPalette /> : ''}
                                         {props.service.id === 2 ? <FaPeopleCarry /> : ''}
@@ -36,7 +34,7 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
                                     className="card-title my-auto font-weight-lighter "> {props.service.name}
                                 </h5>
                             </div>
-                            <h5>
+                            <h5 >
                                 {show2 ? <AiOutlineMinus /> : <AiOutlinePlus />}
                             </h5>
 
@@ -67,8 +65,11 @@ const Layout = styled.div`
 
 .cardHover:hover {
     border-color:rgb(192, 180, 180) !important;
-    box-shadow: 0 0 30px rgba(33,33,33,.8) !important;
-    transition: 0.5s;
+    box-shadow: 0 0 30px rgba(33,33,33,1) !important;
+    transition: 0.75s;
+}
+.icon {
+    color: #f8a320;
 }
 
 `
