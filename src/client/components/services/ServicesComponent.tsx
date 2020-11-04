@@ -20,8 +20,17 @@ const Services = [
     {
         id: 3,
         name: "Responsive",
-        icon: "FaMobileAlt",
         description: "With over 60% of website traffic coming from mobile devices, having a responsive website is a must! All our websites come mobile-ready to provide the best user experience.",
+    },
+    {
+        id: 4,
+        name: "SEO-Friendly",
+        description: "SEO (Search Engine Optimization) is an important part of digital marketing! While we provide services to optimize your web marketing, our websites come standard with SEO-friendly coding.",
+    },
+    {
+        id: 5,
+        name: "Web Managment",
+        description: "We make web management simple. Whether your business already has a website, or you’re taking your first steps toward doing business online, the experienced designers, developers and specialists at at codeBasix can help.",
     },
 ];
 
@@ -47,16 +56,18 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
                     </div>
                 </Slide>
             </main>
-            <div className=" container h-25">
-                <div className="row justify-content-end">
-                    <IconContext.Provider value={{ style: { fontSize: '60px' } }}>
-                        <a href="#home" className="text-secondary">
-                            <FaChevronUp />
-                        </a>
-                        <a href="#about" className="text-secondary">
-                            <FaChevronDown />
-                        </a>
-                    </IconContext.Provider>
+            <div className="container h-25">
+                <div className="row">
+                    <div className="col align-self-end mt-5 text-right">
+                        <IconContext.Provider value={{ style: { fontSize: '60px' } }}>
+                            <a href="#home" className="text-secondary">
+                                <FaChevronUp />
+                            </a>
+                            <a href="#about" className="text-secondary">
+                                <FaChevronDown />
+                            </a>
+                        </IconContext.Provider>
+                    </div>
                 </div>
             </div>
         </Layout>

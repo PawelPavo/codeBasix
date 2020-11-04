@@ -1,8 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components';
 import { IconContext } from "react-icons"
+import { BsGraphUp } from 'react-icons/bs';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import { FaMobileAlt, FaPeopleCarry, FaPalette } from 'react-icons/fa';
+import { FaMobileAlt, FaPeopleCarry, FaPalette, FaCode } from 'react-icons/fa';
 import { IServices } from '../../utils/interfaces';
 
 
@@ -23,6 +24,8 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
                                     {props.service.id === 1 ? <FaPalette /> : ''}
                                     {props.service.id === 2 ? <FaPeopleCarry /> : ''}
                                     {props.service.id === 3 ? <FaMobileAlt /> : ''}
+                                    {props.service.id === 4 ? <BsGraphUp /> : ''}
+                                    {props.service.id === 5 ? <FaCode /> : ''}
                                 </div>
                             </IconContext.Provider>
                         </div>
