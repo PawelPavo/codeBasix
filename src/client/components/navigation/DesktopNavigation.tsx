@@ -10,25 +10,23 @@ const DesktopNavigation: React.FC<IDesktopNavigationProps> = (props) => {
                 <Slide top>
                     <div className="row">
                         <div className="col-md-4 mt-3">
-                            <a href="#home">
-                                <embed
-                                    className="img-fluid mobile-logo"
-                                    style={{ height: "auto", width: "225px" }}
-                                    type="image/svg+xml"
-                                    src="https://news-api.s3.us-east-2.amazonaws.com/codeBasixLogo.svg"
-                                />
-                            </a>
+                            <embed
+                                className="img-fluid mobile-logo"
+                                style={{ height: "auto", width: "225px" }}
+                                type="image/svg+xml"
+                                src="https://news-api.s3.us-east-2.amazonaws.com/codeBasixLogo.svg"
+                            />
                         </div>
                         <div className="col-md-8 my-auto">
                             <div className="row justify-content-end">
-                                <a href="#about">
-                                    <h4 className="font-weight-lighter mx-5 mobile-nav-text">About</h4>
+                                <a href="#about" className="nav-text left mr-5">
+                                    <h4 className="font-weight-lighter mobile-nav-text">About</h4>
                                 </a>
-                                <a href="#services">
+                                <a href="#services" className="nav-text left mr-5">
                                     <h4 className="font-weight-lighter mobile-nav-text">Services</h4>
                                 </a>
-                                <a href="#contact">
-                                    <h4 className="font-weight-lighter ml-5 mobile-nav-text">Contact</h4>
+                                <a href="#contact" className="nav-text left">
+                                    <h4 className="font-weight-lighter mobile-nav-text">Contact</h4>
                                 </a>
                             </div>
                         </div>
@@ -53,6 +51,33 @@ const Layout = styled.div`
       display: block;
     }
 }
+
+.nav-text {
+    text-decoration: none;
+    color: #07407b;
+}
+
+a.left {
+    position: relative !important;
+}
+
+a.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff5c5c;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+a.left:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+
 `
 
 export interface IDesktopNavigationProps { }

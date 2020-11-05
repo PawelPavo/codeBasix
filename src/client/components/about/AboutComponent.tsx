@@ -4,7 +4,7 @@ const AboutComponent: React.FC<IAboutComponentProps> = (props) => {
 
     return (
         <>
-            <main className="container h-100">
+            <main className="container h-100 no-gutters">
             <div className="row">
                     <div className="col-md-12 mt-5">
                             <div className="display-3 font-weight-lighter">About Us</div>

@@ -38,7 +38,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
     return (
         <Layout>
-            <main className="container h-100">
+            <main className="container h-100 no-gutters hero-image-service">
                 <div className="row">
                     <div className="col-md-12 mt-5">
                         <Slide right>
@@ -47,7 +47,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
                     </div>
                 </div>
                 <Slide left>
-                    <div className="row mt-5">
+                    <div className="row d-flex justify-content-end mt-5">
                         <div className="col-md-8">
                             {Services.map(service => (
                                 <ServicesCard key={service.name} service={service} />
@@ -66,6 +66,18 @@ const Layout = styled.div`
       font-size: 50px;
     }
 }
+
+.hero-image-service {
+    background-image: url("https://news-api.s3.us-east-2.amazonaws.com/road.jpeg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+
+
 `
 
 export interface IServicesComponentProps { }
