@@ -58,6 +58,10 @@ const Layout = styled.div`
     transition: height 2s, opacity 2s;
 }
 
+.bg-custom-service-card-bg {
+    background-color: rgba(25, 76, 130, .75);;
+} 
+
 .showContent-active {
     height: 200px;
     opacity: 1;
@@ -67,6 +71,8 @@ const Layout = styled.div`
     border-color:rgb(192, 180, 180) !important;
     box-shadow: 0 0 30px rgba(33,33,33,1) !important;
     transition: all 0.75s ease-in-out;
+    background-color: rgba(25, 76, 130, 1);;
+
 }
 .icon {
     color: #f8a320;
