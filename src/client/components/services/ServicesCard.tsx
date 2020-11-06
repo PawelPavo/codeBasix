@@ -31,7 +31,7 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
                             </div>
                             <div className="col-7">
                                 <h5
-                                    className="card-title my-auto font-weight-lighter "> {props.service.name}
+                                    className="card-title my-auto font-weight-lighter"> {props.service.name}
                                 </h5>
                             </div>
                             <h5 style={{color: "#2fb1ff"}}>
