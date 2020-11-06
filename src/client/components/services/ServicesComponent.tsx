@@ -68,7 +68,7 @@ const Layout = styled.div`
 }
 
 .hero-image-service {
-    background-image: url("https://news-api.s3.us-east-2.amazonaws.com/road.jpeg");
+    background-image: url("https://news-api.s3.us-east-2.amazonaws.com/coffee-geek-4A1fKj5RrJA-unsplash.jpg");
     height: 100%;
     background-attachment: fixed;
     background-position: center;
