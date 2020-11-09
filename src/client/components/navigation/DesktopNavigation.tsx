@@ -8,28 +8,16 @@ const DesktopNavigation: React.FC<IDesktopNavigationProps> = (props) => {
         <>
             <Layout>
                 <Slide top>
-                    <div className="row">
-                        <div className="col-md-4 mt-3">
-                            <embed
-                                className="img-fluid mobile-logo"
-                                style={{ height: "auto", width: "225px" }}
-                                type="image/svg+xml"
-                                src="https://news-api.s3.us-east-2.amazonaws.com/codeBasixLogo.svg"
-                            />
-                        </div>
-                        <div className="col-md-8 my-auto">
-                            <div className="row justify-content-end">
-                                <a href="#about" className="nav-text left mr-5">
-                                    <h4 className="font-weight-lighter mobile-nav-text">About</h4>
-                                </a>
-                                <a href="#services" className="nav-text left mr-5">
-                                    <h4 className="font-weight-lighter mobile-nav-text">Services</h4>
-                                </a>
-                                <a href="#contact" className="nav-text left">
-                                    <h4 className="font-weight-lighter mobile-nav-text">Contact</h4>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="row justify-content-end mt-5">
+                        <a href="#about" className="nav-text left mr-5">
+                            <h4 className="font-weight-lighter mobile-nav-text">About</h4>
+                        </a>
+                        <a href="#services" className="nav-text left mr-5">
+                            <h4 className="font-weight-lighter mobile-nav-text">Services</h4>
+                        </a>
+                        <a href="#contact" className="nav-text left">
+                            <h4 className="font-weight-lighter mobile-nav-text">Contact</h4>
+                        </a>
                     </div>
                 </Slide>
             </Layout>
