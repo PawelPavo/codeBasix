@@ -6,8 +6,6 @@ import ContactComponent from '../components/contact/ContactComponent';
 import HomeComponent from '../components/home/HomeComponent';
 import ServicesComponent from '../components/services/ServicesComponent';
 
-
-
 const Home: React.FC<IHomeProps> = (props) => {
 
     return (
@@ -36,8 +34,6 @@ const Home: React.FC<IHomeProps> = (props) => {
         </>
     )
 }
-
-
 
 export interface IHomeProps { }
 
