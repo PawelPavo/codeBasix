@@ -71,8 +71,7 @@ const Layout = styled.div`
     border-color:rgb(192, 180, 180) !important;
     box-shadow: 0 0 30px rgba(33,33,33,1) !important;
     transition: all 0.75s ease-in-out;
-    background-color: rgba(25, 76, 130, 1);;
-
+    background-color: rgba(25, 76, 130, 1);
 }
 .icon {
     color: #f8a320;

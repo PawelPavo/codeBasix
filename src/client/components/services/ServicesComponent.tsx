@@ -75,9 +75,6 @@ const Layout = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-
-
-
 `
 
 export interface IServicesComponentProps { }
