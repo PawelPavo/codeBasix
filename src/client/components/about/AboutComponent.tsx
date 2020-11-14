@@ -9,30 +9,29 @@ const AboutComponent: React.FC<IAboutComponentProps> = (props) => {
         <>
             <Layout>
                 <main className="container h-100 no-gutters">
-                    <div className="row">
+                <div className="row">
                         <div className="col-md-12 mt-5">
                             <div className="display-3 font-weight-lighter">Founders</div>
-
+                          
                             <div className="header">
                                 <h5>Meet Pawel, Nicole & Paula</h5>
-                                <p>We're web developers.  We're business owners.
-                                 We believe business does not have to be complicated nor is the software we create.</p>
+                                <span>Web Developers | Business Owners</span> 
                             </div>
 
                             <div className="row">
-
-                                <div className="col-lg-4 col-md-4 col-xs-4 thumb">
+                                <div className="col-lg-4 col-md-4 col-xs-4 thumb text-center">
                                     <a className="thumbnail" href="https://damp-headland-11870.herokuapp.com/">
-                                        <img className="img-responsive" src="https://cdn1.vectorstock.com/i/thumb-large/63/85/black-smiley-flat-silhouette-white-background-vector-26856385.jpg" alt="pawel" width="43%" />
+                                        <img className="img-responsive" src="https://cdn1.vectorstock.com/i/thumb-large/63/85/black-smiley-flat-silhouette-white-background-vector-26856385.jpg" alt="pawel" width="40%" />
                                     </a>
                                     <Pawel>
                                         <Rotate items={['Pawel is razor sharp.', 'He can be optimistic.', 'He is a bad liar.', 'He is way loyal.', 'He is just honest.']} />
                                     </Pawel>
                                 </div>
+                               
 
-                                <div className="col-lg-4 col-md-4 col-xs-4 thumb">
+                                <div className="col-lg-4 col-md-4 col-xs-4 thumb text-center">
                                     <a className="thumbnail" href="#">
-                                        <img className="img-responsive" src="https://cdn1.vectorstock.com/i/thumb-large/63/85/black-smiley-flat-silhouette-white-background-vector-26856385.jpg" alt="nicole" width="43%" />
+                                        <img className="img-responsive" src="https://cdn1.vectorstock.com/i/thumb-large/63/85/black-smiley-flat-silhouette-white-background-vector-26856385.jpg" alt="nicole" width="40%" />
                                     </a>
                                     <Nicole>
                                         <Rotate items={['Nicole is wicked smart.', 'She is steady eddie.', 'Nicole is a giver.', 'She is heart of gold.', 'She is creative genius.']} />
@@ -40,9 +39,9 @@ const AboutComponent: React.FC<IAboutComponentProps> = (props) => {
                                 </div>
 
 
-                                <div className="col-lg-4 col-md-4 col-xs-4 thumb">
+                                <div className="col-lg-4 col-md-4 col-xs-4 thumb text-center">
                                     <a className="thumbnail" href="#">
-                                        <img className="img-responsive" src="https://cdn1.vectorstock.com/i/thumb-large/63/85/black-smiley-flat-silhouette-white-background-vector-26856385.jpg" alt="paula" width="43%" />
+                                        <img className="img-responsive" src="https://cdn1.vectorstock.com/i/thumb-large/63/85/black-smiley-flat-silhouette-white-background-vector-26856385.jpg" alt="paula" width="40%" />
                                     </a>
                                     <Paula>
                                         <Rotate items={['Paula is a learner.', 'She is kind of crazy.', 'She is driven.', 'She is fearless.', 'She is relentless.']} />
@@ -53,9 +52,11 @@ const AboutComponent: React.FC<IAboutComponentProps> = (props) => {
                             </div>
 
                         </div>
+                        </div>
+                
 
 
-                    </div>
+             
 
 
 
@@ -67,20 +68,18 @@ const AboutComponent: React.FC<IAboutComponentProps> = (props) => {
 
 
 const Layout = styled.div`
-.header{
-margin-top: 20px;
-margin-left: 10px;
-text-align: justify;
+.header h5{
+color: #17a2b8;
+font-weight: bold;
+margin-top: 5px;
 margin-bottom: auto;
+ 
 }
 
-.row{
-    margin-top: auto;
-    margin-left: 10px;
-    }
+ 
 
-}
 
+ 
 `;
 
 const Pawel = styled.div`
@@ -90,7 +89,7 @@ font-weight: bold;
 `;
 
 const Nicole = styled.div`
-color: #10A5F5;
+color: #28a745;
 font-weight: bold;
  
  
