@@ -2,7 +2,9 @@ import * as React from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import styled from 'styled-components';
-import ServicesCard from './ServicesCard';
+import DesktopNavigation from '../components/navigation/DesktopNavigation';
+import MobileNavigation from '../components/navigation/MobileNavigation';
+import ServicesCard from '../components/services/ServicesCard';
 
 const Slide = require('react-reveal/Zoom')
 
@@ -36,25 +38,45 @@ const Services = [
 
 const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
+    const [width, setWidth] = React.useState<number>(window.innerWidth);
+    const breakpoint = 576;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+
     return (
         <Layout>
-            <main className="container h-100 no-gutters hero-image-service">
-                <div className="row">
-                    <div className="col-md-12 mt-5">
-                        <Slide right>
-                            <div className="display-3 font-weight-lighter mobile-text">Web Services</div>
+            <main className="container hero-image-service no-gutters">
+                <div className="row justify-content-between">
+                    <header className="col d-flex justify-content-between align-items-center">
+                        <Slide >
+                            <a href="/">
+                                <img
+                                    style={{ height: '97px', width: '157px' }}
+                                    src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
+                                    className="m-3"
+                                />
+                            </a>
                         </Slide>
+                        {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
+                    </header>
+                </div>
+                <div className="row">
+                    <div className="col-md-12 mt-2">
+                        <div className="display-3 font-weight-lighter mobile-text">Web Services</div>
                     </div>
                 </div>
-                <Slide left>
-                    <div className="row d-flex justify-content-end mt-5">
-                        <div className="col-md-8">
-                            {Services.map(service => (
-                                <ServicesCard key={service.name} service={service} />
-                            ))}
-                        </div>
+                <div className="row d-flex justify-content-end mt-5">
+                    <div className="col-md-8">
+                        {Services.map(service => (
+                            <ServicesCard key={service.name} service={service} />
+                        ))}
                     </div>
-                </Slide>
+                </div>
             </main>
         </Layout>
     )
