@@ -1,14 +1,42 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Rotate from 'react-rotating-text';
+import DesktopNavigation from '../components/navigation/DesktopNavigation';
+import MobileNavigation from '../components/navigation/MobileNavigation';
+
+const Slide = require('react-reveal/Zoom')
 
 
-const AboutComponent: React.FC<IAboutComponentProps> = (props) => {
+const About: React.FC<IAboutProps> = (props) => {
+
+    const [width, setWidth] = React.useState<number>(window.innerWidth);
+    const breakpoint = 576;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
 
     return (
         <>
             <Layout>
                 <main className="container h-100 no-gutters">
+                <div className="row justify-content-between">
+                    <header className="col d-flex justify-content-between align-items-center">
+                        <Slide >
+                            <a href="/">
+                                <img
+                                    style={{ height: '97px', width: '157px' }}
+                                    src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
+                                    className="m-3"
+                                />
+                            </a>
+                        </Slide>
+                        {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
+                    </header>
+                </div>
                 <div className="row">
                         <div className="col-md-12 mt-5">
                             <div className="display-3 font-weight-lighter">Founders</div>
@@ -102,6 +130,6 @@ font-weight: bold;
  
 `;
 
-export interface IAboutComponentProps { }
+export interface IAboutProps { }
 
-export default AboutComponent;
+export default About;

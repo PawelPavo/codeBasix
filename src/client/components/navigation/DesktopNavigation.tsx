@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Slide = require('react-reveal/Slide');
@@ -9,15 +10,21 @@ const DesktopNavigation: React.FC<IDesktopNavigationProps> = (props) => {
             <Layout>
                 <Slide top>
                     <div className="row justify-content-end mt-5">
-                        <a href="#about" className="nav-text left mr-5">
-                            <h4 className="font-weight-lighter mobile-nav-text">About</h4>
-                        </a>
-                        <a href="#services" className="nav-text left mr-5">
-                            <h4 className="font-weight-lighter mobile-nav-text">Services</h4>
-                        </a>
-                        <a href="#contact" className="nav-text left">
-                            <h4 className="font-weight-lighter mobile-nav-text">Contact</h4>
-                        </a>
+                        <NavLink to="/about">
+                            <div className="nav-text left mr-5">
+                                <h4 className="font-weight-lighter mobile-nav-text">About</h4>
+                            </div>
+                        </NavLink>
+                        <NavLink to="/services">
+                            <div className="nav-text left mr-5">
+                                <h4 className="font-weight-lighter mobile-nav-text">Services</h4>
+                            </div>
+                        </NavLink>
+                        <NavLink to="/contact">
+                            <div className="nav-text left">
+                                <h4 className="font-weight-lighter mobile-nav-text">Contact</h4>
+                            </div>
+                        </NavLink>
                     </div>
                 </Slide>
             </Layout>

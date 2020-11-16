@@ -4,8 +4,16 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './utils/styles/global-style';
 import { theme } from './utils/styles/theme';
 import Home from './views/Home';
+import About from './views/About'
+import Services from './views/Services'
+import Contact from './views/Contact'
+
+const Slide = require('react-reveal/Slide');
 
 const App = () => {
+
+
+
 	return (
 		<ThemeProvider theme={theme} >
 			<>
@@ -15,6 +23,15 @@ const App = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
+						<Route exact path="/about">
+							<About />
+						</Route>
+						<Route exact path="/services">
+							<Services />
+						</Route>
+						<Route exact path="/contact">
+							<Contact />
+						</Route>
 					</Switch>
 				</BrowserRouter>
 			</>
@@ -22,6 +39,6 @@ const App = () => {
 	)
 };
 
-interface AppProps {}
+interface AppProps { }
 
 export default App;
