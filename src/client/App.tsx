@@ -4,15 +4,13 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './utils/styles/global-style';
 import { theme } from './utils/styles/theme';
 import Home from './views/Home';
-import About from './views/About'
-import Services from './views/Services'
-import Contact from './views/Contact'
+import About from './views/About';
+import Services from './views/Services';
+import Contact from './views/Contact';
 
 const Slide = require('react-reveal/Slide');
 
 const App = () => {
-
-
 
 	return (
 		<ThemeProvider theme={theme} >
