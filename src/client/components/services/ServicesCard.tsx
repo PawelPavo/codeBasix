@@ -57,7 +57,7 @@ const Layout = styled.div`
 }
 
 .bg-custom-service-card-bg {
-    background-color: rgba(25, 76, 130, .75);;
+    background-color: rgba(25, 76, 130, .75);
 } 
 
 .showContent-active {
