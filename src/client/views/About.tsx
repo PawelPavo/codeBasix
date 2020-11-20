@@ -7,20 +7,20 @@ import Slide from 'react-reveal/Zoom';
 const Peoples = [
     {
         id: 1,
-        person: "Pawel",
-        about: "Lorem Ipsum dolor sit amet.Lorem Ipsum dolor sit amet.Lorem Ipsum dolor sit amet.",
+        name: "Pawel Jaskolski",
+        description: "Born in Poland and lived a good portion of his life in New York.  Being a small business owner himself, Pawel has a simplistic yet focused approach: Apply the right technology to drive business revenue while keeping it basic.  He is bluntly honest but wears his heart on his sleeve.  ",
         image: "https://news-api.s3.us-east-2.amazonaws.com/MeEyesOpen2.png",
     },
     {
         id: 2,
-        person: "Nicole",
-        about: "Lorem Ipsum dolor sit amet.Lorem Ipsum dolor sit amet.Lorem Ipsum dolor sit amet.",
+        name: "Nicole Pasquale",
+        description: "Originally from Jersey, Nicole can touch anything and make it beautiful.  She is wickedly smart and has an eye for detail that most choose not to see.  Nicole welcomes all idea by working with businesses to ensure their technology vision is always at the forefront. ",
         image: "https://news-api.s3.us-east-2.amazonaws.com/MeEyesOpen2.png",
     },
     {
         id: 3,
-        person: "Paula",
-        about: "Lorem Ipsum dolor sit amet.Lorem Ipsum dolor sit amet.Lorem Ipsum dolor sit amet.",
+        name: "Paula Suarez",
+        description: "With strong midwestern working roots, Paula doesn’t give up easily.  Once her mind is set, she will make it happen and nothing will stop her.  Paula has a unique ability to find the business operational gaps easily and quickly then fill those holes with technology that makes sense.",
         image: "https://news-api.s3.us-east-2.amazonaws.com/MeEyesOpen2.png",
     },
 
@@ -40,9 +40,10 @@ const About: React.FC<IAboutProps> = (props) => {
 
     return (
         <>
-            <main className="container hero-image-service no-gutters">
+            <div className="container hero-image-service no-gutters">
+
                 <div className="row justify-content-between">
-                    <header className="col d-flex justify-content-between align-items-center">
+                    <header className="col d-flex justify-content-between">
                         <Slide >
                             <a href="/">
                                 <img
@@ -56,30 +57,24 @@ const About: React.FC<IAboutProps> = (props) => {
                     </header>
                 </div>
 
-                <div className="row">
-                    <div className="col-md-12 mt-2 my-1">
-                        <div className="display-3 font-weight-lighter mobile-text">About</div>
-                    </div>
+
+                <div className="col-md-12">
+                    <div className="display-3 font-weight-lighter mobile-text">About</div>
                 </div>
 
-                <div className="container my-4">
-                    <div className="row">
+                <div className="row my-5">
 
-                        {Peoples.map(people => (
-                            <AboutCard key={people.person} people={people} />
-                        ))}
+                    {Peoples.map(people => (
+                        <AboutCard key={people.name} person={people} />
+                    ))}
 
 
-                    </div>
                 </div>
-
-            </main>
-
+            </div>
 
         </>
     )
 }
-
 
 
 

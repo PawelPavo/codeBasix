@@ -1,24 +1,25 @@
 import * as React from 'react'
 import styled from 'styled-components';
-import { IPeople } from '../../utils/interfaces';
+import { IPerson } from '../../utils/interfaces';
+import Slide from 'react-reveal/Zoom';
+
 
 const AboutCard: React.FC<AboutCardProps> = (props) => {
 
-    const [display, setDisplay] = React.useState(false);
     return (
         <Layout>
         
                 <div className="col-md">
                     <div className="card">
                       
-                        <img src={props.people.image} className = "image" />
+                        <img src={props.person.image} className = "image" item-align = "center"/>
 
                         <div className="card-body">
 
-                            <h5 className="card-title">{props.people.person}</h5>
+                            <h5 className="card-title">{props.person.name}</h5>
 
-                            <div className = "middle">
-                            <p className="card-text">{props.people.about}</p>
+                            <div className = "overlay">
+                            <p className="card-text">{props.person.description}</p>
                             </div>
                         </div>
                     </div>
@@ -33,6 +34,8 @@ const Layout = styled.div`
 .card {
     position: relative;
     width: 80%;
+    border: none;
+     
   }
   
   .image {
@@ -42,39 +45,45 @@ const Layout = styled.div`
     height: 50%;
     transition: .5s ease;
     backface-visibility: hidden;
-  }
-  
-  .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-80%, -80%);
      
   }
   
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #3394FF;
+  
+  }
+
+  
   .card:hover .image {
-    opacity: 0.3;
+    opacity: .08;
   }
   
-  .card:hover .middle {
+  .card:hover .overlay {
     opacity: 1;
   }
   
   .card-text {
-    background-color: white;
-    color: blue;
+    color: white;
+    text-align: justify;
+    padding: 10px;
    
-
   }
 
 
 `
 
 interface AboutCardProps {
-    people: IPeople;
+    person: IPerson;
 }
 
 export default AboutCard;

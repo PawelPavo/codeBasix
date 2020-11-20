@@ -6,8 +6,8 @@ export interface IServices {
     
 }
 
-export interface IPeople {
-    person?: string,
-    about?: string,
+export interface IPerson {
+    name?: string,
+    description?: string,
     image?: string,
 }
