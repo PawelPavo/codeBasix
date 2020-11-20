@@ -1,92 +1,89 @@
 import * as React from 'react'
 import styled from 'styled-components';
-import { IconContext } from "react-icons"
-import { FaMobileAlt, FaFacebookF, FaRegEnvelope } from 'react-icons/fa';
-import { IServices } from '../../utils/interfaces';
+import { IPerson } from '../../utils/interfaces';
+import Slide from 'react-reveal/Zoom';
 
-
-const Slide = require('react-reveal/Zoom')
 
 const AboutCard: React.FC<AboutCardProps> = (props) => {
 
-    const [display, setDisplay] = React.useState(false);
     return (
         <Layout>
-            <div
-                onClick={() => setDisplay(!display)}
-                className="col-md-4">
-                <div className="card-body">
+        
+                <div className="col-md">
+                    <div className="card">
+                      
+                        <img src={props.person.image} className = "image" item-align = "center"/>
 
-                    <img src={props.service.image} width="50%" />
+                        <div className="card-body">
 
+                            <h5 className="card-title">{props.person.name}</h5>
 
-                    <h3 className="card-title"> {props.service.person}</h3>
-
-                    <IconContext.Provider value={{ style: { fontSize: '20px', color: "rgba(25, 76, 130, .75)" } }}>
-
-                        {props.service.id === 1 ? <FaMobileAlt /> : ''}
-                        {props.service.id === 1 ? <FaFacebookF /> : ''}
-                        {props.service.id === 1 ? <FaRegEnvelope /> : ''}
-
-
-
-                        {props.service.id === 2 ? <FaMobileAlt /> : ''}
-                        {props.service.id === 2 ? <FaFacebookF /> : ''}
-                        {props.service.id === 2 ? <FaRegEnvelope /> : ''}
-
-
-
-                        {props.service.id === 3 ? <FaMobileAlt /> : ''}
-                        {props.service.id === 3 ? <FaFacebookF /> : ''}
-                        {props.service.id === 3 ? <FaRegEnvelope /> : ''}
-
-
-                    </IconContext.Provider>
-
-
-                    <div className={`showText ${display ? 'showText showText-active' : ''}`}>
-
-                        <p className="card-text mt-2">{props.service.about}</p>
-
+                            <div className = "overlay">
+                            <p className="card-text">{props.person.description}</p>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
-            </div>
+          
         </Layout>
     )
 }
 
 const Layout = styled.div`
 
-
-.showText {
-    height: 0px;
-    width: 100%;
-    display: block;
-    opacity: 0;
-    transition: background-color 0.5s ease;
-    background-color: #f2f3f4;
-    text-align: justify;
-   
-}
-
-.showText-active {
-    opacity: .9;
-    height: 250px;
-    
- 
+.card {
+    position: relative;
+    width: 80%;
+    border: none;
      
-}
+  }
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 50%;
+    height: 50%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+     
+  }
+  
 
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #3394FF;
+  
+  }
 
-
+  
+  .card:hover .image {
+    opacity: .08;
+  }
+  
+  .card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .card-text {
+    color: white;
+    text-align: justify;
+    padding: 10px;
+   
+  }
 
 
 `
 
 interface AboutCardProps {
-    service: IServices;
+    person: IPerson;
 }
 
 export default AboutCard;

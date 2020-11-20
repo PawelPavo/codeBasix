@@ -3,7 +3,11 @@ export interface IServices {
     name?: string,
     description?: string,
     icon?: any,
-    person?: string,
-    about?: string,
-    image?: string
+    
+}
+
+export interface IPerson {
+    name?: string,
+    description?: string,
+    image?: string,
 }
