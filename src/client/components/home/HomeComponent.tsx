@@ -59,14 +59,14 @@ const Layout = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+}
     
 .mobile-text {
     @media not all and (min-width: 576px) {
       font-size: 30px;
     }
 }
-
-`
+`;
 
 export interface IHomeComponentProps { }
 
