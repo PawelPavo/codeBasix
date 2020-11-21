@@ -7,7 +7,7 @@ import MobileNavigation from '../components/navigation/MobileNavigation';
 import ServicesCard from '../components/services/ServicesCard';
 
 const Slide = require('react-reveal/Zoom')
-
+ 
 const Services = [
     {
         id: 1,
