@@ -1,18 +1,15 @@
 import * as React from 'react'
 import styled from 'styled-components';
 import { IPerson } from '../../utils/interfaces';
-import Slide from 'react-reveal/Zoom';
-
 
 const AboutCard: React.FC<AboutCardProps> = (props) => {
 
     return (
         <Layout>
-        
-                <div className="col-md">
-                    <div className="card">
+                <div className="col-sm">
+                <div className="card col-md" style={{width: "18rem"}}>
                       
-                        <img src={props.person.image} className = "image" item-align = "center"/>
+                        <img src={props.person.image} className = "image" />
 
                         <div className="card-body">
 
@@ -32,20 +29,20 @@ const AboutCard: React.FC<AboutCardProps> = (props) => {
 const Layout = styled.div`
 
 .card {
-    position: relative;
-    width: 80%;
     border: none;
-     
+    border-radius: 25px;
+    
   }
   
   .image {
-    opacity: 1;
+    width: 100%;
+    object-fit: cover;
+    opacity: 1
     display: block;
-    width: 50%;
-    height: 50%;
     transition: .5s ease;
     backface-visibility: hidden;
-     
+    border-radius: 25px;
+       
   }
   
 
@@ -55,11 +52,12 @@ const Layout = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 95%;
+    height: 80%;
     width: 100%;
-    opacity: 0;
+    opacity: .05;
     transition: .5s ease;
     background-color: #3394FF;
+    border-radius: 25px;
   
   }
 
@@ -73,12 +71,11 @@ const Layout = styled.div`
   }
   
   .card-text {
-    color: white;
+    color: black;
     text-align: justify;
-    padding: 10px;
+    padding: 15px;
    
   }
-
 
 `
 
