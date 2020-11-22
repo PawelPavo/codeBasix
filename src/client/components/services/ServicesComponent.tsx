@@ -38,7 +38,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
     return (
         <Layout>
-            <main className="container h-100 no-gutters hero-image-service">
+            <main className="container h-100 no-gutters">
                 <div className="row">
                     <div className="col-md-12 mt-5">
                         <Slide right>
@@ -75,9 +75,6 @@ const Layout = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-
-
-
 `
 
 export interface IServicesComponentProps { }
