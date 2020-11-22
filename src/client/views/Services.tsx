@@ -7,12 +7,12 @@ import MobileNavigation from '../components/navigation/MobileNavigation';
 import ServicesCard from '../components/services/ServicesCard';
 
 const Slide = require('react-reveal/Zoom')
- 
+
 const Services = [
     {
         id: 1,
         name: "Stunning Design",
-        description: "First impressions count. The key to a successful business on the web is outstanding web design. The way for any business to achieve success on the internet is to establish a brand. In order to do this, you must have a great looking, website to grab visitor's attention.",
+        description: "Your website needs to be in line with your brand and your business goals. We are passionate about beautiful and effective web design that leaves you wanting more.",
     },
     {
         id: 2,
@@ -32,7 +32,12 @@ const Services = [
     {
         id: 5,
         name: "Web Managment",
-        description: "We make web management simple. Whether your business already has a website, or you’re taking your first steps toward doing business online, the experienced designers, developers and specialists at at codeBasix can help.",
+        description: "We make web management simple. Whether your business already has a website, or you’re taking your first steps toward doing business online.",
+    },
+    {
+        id: 6,
+        name: "Grapihic Design",
+        description: "A picture is worth a thousand words. Make sure your customers understand every single one of them.",
     },
 ];
 
@@ -50,10 +55,10 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
     return (
         <Layout>
-            <main className="container hero-image-service no-gutters">
-                <div className="row justify-content-between">
+            <div className="container">
+            <div className="row justify-content-between">
                     <header className="col d-flex justify-content-between align-items-center">
-                        <Slide >
+                        <Slide>
                             <a href="/">
                                 <img
                                     style={{ height: '97px', width: '157px' }}
@@ -65,19 +70,15 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
                         {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
                     </header>
                 </div>
-                <div className="row">
-                    <div className="col-md-12 mt-2">
-                        <div className="display-3 font-weight-lighter mobile-text">Web Services</div>
-                    </div>
+                <div className="row justify-content-center my-5">
+                    <div className="display-3 font-weight-lighter mobile-text">Our Services</div>
                 </div>
-                <div className="row d-flex justify-content-end mt-5">
-                    <div className="col-md-8">
-                        {Services.map(service => (
-                            <ServicesCard key={service.name} service={service} />
-                        ))}
-                    </div>
+                <div className="row justify-content-center">
+                    {Services.map(service => (
+                        <ServicesCard key={service.name} service={service} />
+                    ))}
                 </div>
-            </main>
+            </div>
         </Layout>
     )
 }
@@ -89,14 +90,6 @@ const Layout = styled.div`
     }
 }
 
-.hero-image-service {
-    background-image: url("https://news-api.s3.us-east-2.amazonaws.com/coffee-geek-4A1fKj5RrJA-unsplash.jpg");
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
 `
 
 export interface IServicesComponentProps { }

@@ -8,7 +8,6 @@ import About from './views/About';
 import Services from './views/Services';
 import Contact from './views/Contact';
 
-const Slide = require('react-reveal/Slide');
 
 const App = () => {
 
