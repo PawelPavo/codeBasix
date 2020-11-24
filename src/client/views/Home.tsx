@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { IconContext } from 'react-icons/lib';
 import styled from 'styled-components';
 import ServicesComponent from './Services';
 import GoogleFontLoader from 'react-google-font-loader';

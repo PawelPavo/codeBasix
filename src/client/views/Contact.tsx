@@ -41,7 +41,7 @@ const Contact: React.FC<IContactProps> = (props) => {
                         {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
                     </header>
                 </div>
-                <div className="row justify-content-center mt-5">
+                <div className="row justify-content-center mt-3">
                     <div className="display-3 font-weight-lighter mobile-text">Contact</div>
                 </div>
                 <div className="row mt-3 justify-content-center">
