@@ -2,31 +2,28 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Slide = require('react-reveal/Slide');
-
 const DesktopNavigation: React.FC<IDesktopNavigationProps> = (props) => {
     return (
         <>
             <Layout>
-                <Slide top>
-                    <div className="row justify-content-between mt-5">
-                        <NavLink to="/about">
-                            <div className="nav-text left mr-5">
-                                <h4 className="font-weight-lighter mobile-nav-text">About</h4>
-                            </div>
-                        </NavLink>
-                        <NavLink to="/services">
-                            <div className="nav-text left mr-5">
-                                <h4 className="font-weight-lighter mobile-nav-text">Services</h4>
-                            </div>
-                        </NavLink>
-                        <NavLink to="/contact">
-                            <div className="nav-text left">
-                                <h4 className="font-weight-lighter mobile-nav-text">Contact</h4>
-                            </div>
-                        </NavLink>
-                    </div>
-                </Slide>
+
+                <div className="row justify-content-between mt-5">
+                    <NavLink to="/about">
+                        <div className="nav-text left mr-5">
+                            <h4 className="font-weight-lighter mobile-nav-text">About</h4>
+                        </div>
+                    </NavLink>
+                    <NavLink to="/services">
+                        <div className="nav-text left mr-5">
+                            <h4 className="font-weight-lighter mobile-nav-text">Services</h4>
+                        </div>
+                    </NavLink>
+                    <NavLink to="/contact">
+                        <div className="nav-text left">
+                            <h4 className="font-weight-lighter mobile-nav-text">Contact</h4>
+                        </div>
+                    </NavLink>
+                </div>
             </Layout>
         </>
     )

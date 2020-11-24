@@ -1,8 +1,8 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import AboutCard from '../components/about/AboutCard';
 import DesktopNavigation from '../components/navigation/DesktopNavigation';
 import MobileNavigation from '../components/navigation/MobileNavigation';
-const Slide = require('react-reveal/Zoom')
 
 const Peoples = [
     {
@@ -39,46 +39,43 @@ const About: React.FC<IAboutProps> = (props) => {
     }, []);
 
     return (
-        <>
-            <main className="container hero-image-service no-gutters">
-                <div className="row d-flex justify-content-end mt-5">
+        <Layout>
+            <main className="container h-100">
+                <div className="row justify-content-between">
                     <header className="col d-flex justify-content-between align-items-center">
-                        <Slide >
-                            <a href="/">
-                                <img
-                                    style={{ height: '97px', width: '157px' }}
-                                    src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
-                                    className="m-3"
-                                />
-                            </a>
-                        </Slide>
+                        <a href="/">
+                            <img
+                                style={{ height: '97px', width: '157px' }}
+                                src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
+                                className="m-3"
+                            />
+                        </a>
                         {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
                     </header>
                 </div>
-                <div className="row">
-                    <div className="col-md-12 mt-2">
-                        <div className="display-3 font-weight-lighter mobile-text">About</div>
+                <div className="row justify-content-center my-5">
+                    <div className="display-3 font-weight-lighter mobile-text">Meet Our Team</div>
+                </div>
+                <div className="container my-5">
+                    <div className="row d-flex justify-content-center text-center">
+                        {Peoples.map(people => (
+                            <AboutCard key={people.name} person={people} />
+                        ))}
                     </div>
                 </div>
-
             </main>
-
-            <div className="container my-5">
-
-                <div className="row d-flex justify-content-center text-center">
-
-                    {Peoples.map(people => (
-                        <AboutCard key={people.name} person={people} />
-                    ))}
-
-
-                </div>
-            </div>
-
-        </>
+        </Layout>
     )
 }
 
+const Layout = styled.div`
+.mobile-text {
+    @media not all and (min-width: 768px) {
+      font-size: 50px;
+    }
+}
+
+`
 
 
 export interface IAboutProps { }

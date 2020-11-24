@@ -5,9 +5,7 @@ import { StyledMenu } from './Menu.styled';
 const Menu: React.FC<MenuProps> = ({ open }) => {
     return (
         <StyledMenu open={open}>
-            <NavLink to="/">
-                <div>Home</div>
-            </NavLink>
+
             <NavLink to="/about">
                 <div>About</div>
             </NavLink>

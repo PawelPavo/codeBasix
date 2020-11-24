@@ -1,12 +1,8 @@
 import * as React from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { IconContext } from 'react-icons/lib';
 import styled from 'styled-components';
 import DesktopNavigation from '../components/navigation/DesktopNavigation';
 import MobileNavigation from '../components/navigation/MobileNavigation';
 import ServicesCard from '../components/services/ServicesCard';
-
-const Slide = require('react-reveal/Zoom')
 
 const Services = [
     {
@@ -55,18 +51,17 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
     return (
         <Layout>
-            <div className="container">
-            <div className="row justify-content-between">
+
+            <div className="container h-100">
+                <div className="row justify-content-between">
                     <header className="col d-flex justify-content-between align-items-center">
-                        <Slide>
-                            <a href="/">
-                                <img
-                                    style={{ height: '97px', width: '157px' }}
-                                    src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
-                                    className="m-3"
-                                />
-                            </a>
-                        </Slide>
+                        <a href="/">
+                            <img
+                                style={{ height: '97px', width: '157px' }}
+                                src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
+                                className="m-3"
+                            />
+                        </a>
                         {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
                     </header>
                 </div>
@@ -89,6 +84,7 @@ const Layout = styled.div`
       font-size: 50px;
     }
 }
+
 
 `
 
