@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import DesktopNavigation from '../components/navigation/DesktopNavigation';
 import MobileNavigation from '../components/navigation/MobileNavigation';
 import ServicesCard from '../components/services/ServicesCard';
+import { useLocation } from 'react-router-dom'
 
 const Services = [
     {
@@ -38,20 +39,26 @@ const Services = [
 ];
 
 const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
-
+    const [height, setHeight] = React.useState<string>('')
     const [width, setWidth] = React.useState<number>(window.innerWidth);
     const breakpoint = 576;
 
     React.useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleWindowResize);
-
         return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
 
+    let {pathname} = useLocation()
+    React.useEffect(() => {
+        if (pathname == "/services")
+        setHeight('h-100')
+        console.log(pathname)
+    }, [])
+
     return (
         <Layout>
-            <div className="container">
+            <div className={`container ${height}`}>
                 <div className="row justify-content-between">
                     <header className="col d-flex justify-content-between align-items-center">
                         <a href="/">
