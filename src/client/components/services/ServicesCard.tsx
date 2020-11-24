@@ -10,7 +10,7 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
     return (
         <Layout2>
             <div className="col-md-4 my-5 my-auto">
-                <div className="card border-0 mb-5" style={{ width: "21rem", height:"17rem" }}>
+                <div className="card border-0 mb-5 card-hover" style={{ width: "21rem", height: "17rem" }}>
                     <div className="card-body">
                         <div className="card-title text-center">
                             <IconContext.Provider value={{ style: { fontSize: '45px', color: "#ffbd4a", opacity: "0.75" } }}>
@@ -37,6 +37,11 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
 }
 
 const Layout2 = styled.div`
+.card-hover {
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+}
+
 
 .name-text {
     letter-spacing: 2px;
@@ -46,6 +51,11 @@ const Layout2 = styled.div`
     
 }
 
+.card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    opacity: 1;
+  }
 
 `
 

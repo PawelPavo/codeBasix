@@ -71,7 +71,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
                         {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
                     </header>
                 </div>
-                <div className="row justify-content-center my-5">
+                <div className="row justify-content-center mt-3">
                     <div className="display-3 font-weight-lighter mobile-text">Our Services</div>
                 </div>
                 <div className="row justify-content-center">
