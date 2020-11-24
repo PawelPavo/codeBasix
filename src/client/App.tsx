@@ -50,14 +50,6 @@ const Back = styled.div`
 	background-size: cover;
 }
 
-body {
-	position: relative;
-	color: #ffffff;  
-	font-size: 14rem;
-	line-height: 0.9;
-	text-align: center;
-
-}
 `
 
 interface AppProps { }

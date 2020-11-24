@@ -4,75 +4,72 @@ import styled from 'styled-components';
 
 const Arrow: React.FC<IArrowProps> = (props) => {
 
-    return (
-        <>
-            <ArrowStyle>
-                <div id="arrowAnim">
-                    <div className="arrowSliding">
-                        <div className="arrow"></div>
-                    </div>
-                    <div className="arrowSliding delay1">
-                        <div className="arrow"></div>
-                    </div>
-                    <div className="arrowSliding delay2">
-                        <div className="arrow"></div>
-                    </div>
-                    <div className="arrowSliding delay3">
-                        <div className="arrow"></div>
-                    </div>
-                </div>
-            </ArrowStyle>
-        </>
-    )
+  return (
+    <>
+      <Arrow_2>
+        <div className="wrap">
+          <img src="http://image.flaticon.com/icons/svg/3/3907.svg" id="arrow" className="animated bounce" />
+        </div>
+      </Arrow_2>
+    </>
+  )
 }
 
-const ArrowStyle = styled.div`
-#arrowAnim {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: -10;
-  }
-  
-  .arrow {
+const Arrow_2 = styled.div`
 
-    border: 1.5vw solid;
-    border-color: black transparent transparent black;
-    transform: rotate(-135deg);
+.wrap {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  height: 50px;
+  width: auto;
+}
+
+.wrap img {
+  margin: 0px 0 0 -40px;
+  line-height: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+}
+
+.bounce {
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation: bounce 3.6s ease infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
   }
-  
-  .arrowSliding {
-    position: absolute;
-    -webkit-animation: slide 4s linear infinite; 
-            animation: slide 4s linear infinite;
+  5.55556% {
+    transform: translateY(0);
   }
-  
-  .delay1 {
-    -webkit-animation-delay: 1s; 
-      animation-delay: 1s;
+  11.11111% {
+    transform: translateY(0);
   }
-  .delay2 {
-    -webkit-animation-delay: 2s; 
-      animation-delay: 2s;
+  22.22222% {
+    transform: translateY(-15px);
   }
-  .delay3 {
-    -webkit-animation-delay: 3s; 
-      animation-delay: 3s;
+  27.77778% {
+    transform: translateY(0);
   }
-  
-  @-webkit-keyframes slide {
-      0% { opacity:0; transform: translateY(15vw); }  
-     20% { opacity:1; transform: translateY(9vw); }   
-     80% { opacity:1; transform: translateY(-9vw); }  
-    100% { opacity:0; transform: translateY(-15vw); } 
+  33.33333% {
+    transform: translateY(-15px);
   }
-  @keyframes slide {
-      0% { opacity:0; transform: translateY(-15vw); }  
-     20% { opacity:1; transform: translateY(-9vw); }   
-     80% { opacity:1; transform: translateY(5vw); }  
-    100% { opacity:0; transform: translateY(5vw); } 
+  44.44444% {
+    transform: translateY(0);
   }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 `
 
 export interface IArrowProps { }
