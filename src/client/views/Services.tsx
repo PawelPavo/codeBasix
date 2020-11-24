@@ -51,8 +51,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
 
     return (
         <Layout>
-
-            <div className="container h-100">
+            <div className="container">
                 <div className="row justify-content-between">
                     <header className="col d-flex justify-content-between align-items-center">
                         <a href="/">
