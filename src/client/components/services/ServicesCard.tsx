@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components';
 import { IconContext } from "react-icons"
+import { CgArrowLongRight, CgMore } from 'react-icons/cg'
 import { BsGraphUp } from 'react-icons/bs';
 import { FaMobileAlt, FaPeopleCarry, FaPalette, FaCode, FaPlus, FaPaintBrush } from 'react-icons/fa';
 import { IServices } from '../../utils/interfaces';
@@ -10,7 +11,8 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
     return (
         <Layout2>
             <div className="col-md-4 my-5 my-auto">
-                <div className="card border-0 mb-5 card-hover" style={{ width: "21rem", height: "17rem" }}>
+                <div className="card border mb-5 card-hover bg-white rouded-0"
+                    style={{ width: "21rem", height: "17rem", borderTopLeftRadius: "25px", borderBottomRightRadius: "25px", borderTopRightRadius: "0", borderBottomLeftRadius: "0" }}>
                     <div className="card-body">
                         <div className="card-title text-center">
                             <IconContext.Provider value={{ style: { fontSize: '45px', color: "#ffbd4a", opacity: "0.75" } }}>
@@ -27,8 +29,15 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
                         <div className="card-title text-center name-text">{props.service.name}</div>
                         <p className="card-text text-center text-muted mb-3">{props.service.description}</p>
                     </div>
-                    <div className="text-center card-footer bg-white border-0">
-                        <a href="#" className="card-link text-center font-weight-light"><small>Read More...</small></a>
+                    <div className="text-center bg-primary border-0" style={{ position: "relative" }}>
+                        <a
+                            href="#"
+                            className="card-link text-center font-weight-light border px-3 py-2 border-bottom-0 border-right-0 bg-secondary"
+                            style={{ position: "absolute", bottom: "0", right: "0",borderBottomRightRadius : "23px" }}>
+                            <IconContext.Provider value={{ style: { fontSize: '20px', color: "white", opacity: "1" } }}>
+                                <small className=""><CgArrowLongRight /></small>
+                            </IconContext.Provider>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -51,6 +60,9 @@ const Layout2 = styled.div`
     
 }
 
+.card-hover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
 .card-hover:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);

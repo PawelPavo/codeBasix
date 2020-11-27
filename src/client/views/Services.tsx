@@ -24,7 +24,7 @@ const Services = [
     {
         id: 4,
         name: "SEO-Friendly",
-        description: "SEO (Search Engine Optimization) is an important part of digital marketing! While we provide services to optimize your web marketing, our websites come standard with SEO-friendly coding.",
+        description: "SEO (Search Engine Optimization) is an important part of digital marketing! While we provide services to optimize your web marketing, our websites come standard with SEO coding.",
     },
     {
         id: 5,
@@ -71,7 +71,7 @@ const ServicesComponent: React.FC<IServicesComponentProps> = (props) => {
                         {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
                     </header>
                 </div>
-                <div className="row justify-content-center mt-3">
+                <div className="row justify-content-center my-3">
                     <div className="display-3 font-weight-lighter mobile-text">Our Services</div>
                 </div>
                 <div className="row justify-content-center">
