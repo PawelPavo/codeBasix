@@ -16,7 +16,7 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
                     <div className="card-body">
                         <div className="card-title text-center">
                             <IconContext.Provider value={{ style: { fontSize: '45px', color: "#ffbd4a", opacity: "0.75" } }}>
-                                <div>
+                                <div className="drop-shadow">
                                     {props.service.id === 1 ? <FaPalette /> : ''}
                                     {props.service.id === 2 ? <FaPeopleCarry /> : ''}
                                     {props.service.id === 3 ? <FaMobileAlt /> : ''}
@@ -46,6 +46,10 @@ const ServicesCard: React.FC<ServicesCardProps> = (props) => {
 }
 
 const Layout2 = styled.div`
+.drop-shadow {
+    filter: drop-shadow(0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.3));
+}
+
 .card-hover {
     transition: all .4s ease;
     -webkit-transition: all .4s ease;

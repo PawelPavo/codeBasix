@@ -4,94 +4,94 @@ import DesktopNavigation from '../components/navigation/DesktopNavigation';
 import MobileNavigation from '../components/navigation/MobileNavigation';
 
 const Peoples = [
-    {
-        id: 1,
-        name: "Pawel Jaskolski",
-        description: "Being a small business owner himself, Pawel has a simplistic yet focused approach: Apply the right technology to drive business revenue while keeping it basic.  He is bluntly honest but wears his heart on his sleeve.  ",
-        image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
-    },
-    {
-        id: 2,
-        name: "Nicole Pasquale",
-        description: "She is wickedly smart and has an eye for detail that most choose not to see.  Nicole welcomes all idea by working with businesses to ensure their technology vision is always at the forefront. ",
-        image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
-    },
-    {
-        id: 3,
-        name: "Paula Suarez",
-        description: "Once her mind is set, she will make it happen and nothing will stop her.  Paula has a unique ability to find the business operational gaps easily and quickly then fill those holes with technology that makes sense.",
-        image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
-    },
+  {
+    id: 1,
+    name: "Pawel Jaskolski",
+    description: "Being a small business owner himself, Pawel has a simplistic yet focused approach: Apply the right technology to drive business revenue while keeping it basic.  He is bluntly honest but wears his heart on his sleeve.  ",
+    image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+  },
+  {
+    id: 2,
+    name: "Nicole Pasquale",
+    description: "She is wickedly smart and has an eye for detail that most choose not to see.  Nicole welcomes all idea by working with businesses to ensure their technology vision is always at the forefront. ",
+    image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+  },
+  {
+    id: 3,
+    name: "Paula Suarez",
+    description: "Once her mind is set, she will make it happen and nothing will stop her.  Paula has a unique ability to find the business operational gaps easily and quickly then fill those holes with technology that makes sense.",
+    image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+  },
 
 ];
 
 console.log(Peoples[1].name)
 const About: React.FC<IAboutProps> = (props) => {
-    const [width, setWidth] = React.useState<number>(window.innerWidth);
-    const breakpoint = 576;
+  const [width, setWidth] = React.useState<number>(window.innerWidth);
+  const breakpoint = 576;
 
-    React.useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
-        window.addEventListener('resize', handleWindowResize);
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
 
-        return () => window.removeEventListener('resize', handleWindowResize);
-    }, []);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
 
-    return (
-        <Layout>
-            <main className="container h-100">
-                <div className="row justify-content-between">
-                    <header className="col d-flex justify-content-between align-items-center">
-                        <a href="/">
-                            <img
-                                style={{ height: '97px', width: '157px' }}
-                                src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
-                                className="m-3"
-                            />
-                        </a>
-                        {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
-                    </header>
+  return (
+    <Layout>
+      <main className="container h-100">
+        <div className="row justify-content-between">
+          <header className="col d-flex justify-content-between align-items-center">
+            <a href="/">
+              <img
+                style={{ height: '97px', width: '157px' }}
+                src="https://news-api.s3.us-east-2.amazonaws.com/codeBasix-2.png"
+                className="m-3"
+              />
+            </a>
+            {width < breakpoint ? <MobileNavigation /> : <DesktopNavigation />}
+          </header>
+        </div>
+        <div className="row justify-content-center mt-3">
+          <div className="display-3 font-weight-lighter mobile-text">Meet Our Team</div>
+        </div>
+        <div className="team-boxed">
+          <div className="container">
+            <div className="intro">
+              <p className="text-center font-italic">“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”</p>
+              <p className="text-center"> – Martin Fowler</p>
+            </div>
+            <div className="row people">
+              <div className="col-md-6 col-lg-4 item">
+                <div className="box item"><img className="rounded-circle" src="https://news-api.s3.us-east-2.amazonaws.com/profile.jpg" />
+                  <h3 className="name">{Peoples[0].name}</h3>
+                  <p className="title">Fullstack Developer</p>
+                  <p className="description">{Peoples[0].description} </p>
+                  <div className="social"><a href="#"><i className="fa fa-facebook-official"></i></a><a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a></div>
                 </div>
-                <div className="row justify-content-center mt-3">
-                    <div className="display-3 font-weight-lighter mobile-text">Meet Our Team</div>
+              </div>
+              <div className="col-md-6 col-lg-4 item">
+                <div className="box"><img className="rounded-circle" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" />
+                  <h3 className="name">{Peoples[1].name}</h3>
+                  <p className="title">Fullstack Developer</p>
+                  <p className="description">{Peoples[1].description} </p>
+                  <div className="social"><a href="#"><i className="fa fa-facebook-official"></i></a><a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a></div>
                 </div>
-                <div className="team-boxed">
-                    <div className="container">
-                        <div className="intro">
-                            <p className="text-center font-italic">“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”</p>
-                            <p className="text-center"> – Martin Fowler</p>
-                        </div>
-                        <div className="row people">
-                            <div className="col-md-6 col-lg-4 item">
-                                <div className="box item"><img className="rounded-circle" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" />
-                                    <h3 className="name">{Peoples[0].name}</h3>
-                                    <p className="title">Fullstack Developer</p>
-                                    <p className="description">{Peoples[0].description} </p>
-                                    <div className="social"><a href="#"><i className="fa fa-facebook-official"></i></a><a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a></div>
-                                </div>
-                            </div>
-                            <div className="col-md-6 col-lg-4 item">
-                                <div className="box"><img className="rounded-circle" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" />
-                                    <h3 className="name">{Peoples[1].name}</h3>
-                                    <p className="title">Fullstack Developer</p>
-                                    <p className="description">{Peoples[1].description} </p>
-                                    <div className="social"><a href="#"><i className="fa fa-facebook-official"></i></a><a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a></div>
-                                </div>
-                            </div>
-                            <div className="col-md-6 col-lg-4 item">
-                                <div className="box"><img className="rounded-circle" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" />
-                                    <h3 className="name">{Peoples[2].name}</h3>
-                                    <p className="title">Fullstack Developer</p>
-                                    <p className="description">{Peoples[2].description} </p>
-                                    <div className="social"><a href="#"><i className="fa fa-facebook-official"></i></a><a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div className="col-md-6 col-lg-4 item">
+                <div className="box"><img className="rounded-circle" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" />
+                  <h3 className="name">{Peoples[2].name}</h3>
+                  <p className="title">Fullstack Developer</p>
+                  <p className="description">{Peoples[2].description} </p>
+                  <div className="social"><a href="#"><i className="fa fa-facebook-official"></i></a><a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-instagram"></i></a></div>
                 </div>
-            </main >
-        </Layout >
-    )
+              </div>
+            </div>
+          </div>
+        </div>
+      </main >
+    </Layout >
+  )
 }
 
 const Layout = styled.div`
@@ -174,6 +174,9 @@ const Layout = styled.div`
   
   .team-boxed .item img {
     max-width:160px;
+    box-shadow:  17px 27px 40px #c2c2c2, -27px -27px 40px #ffffff;
+    transition: transform .8s;
+
   }
   
   .team-boxed .social {
@@ -197,6 +200,14 @@ const Layout = styled.div`
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
     opacity: 1;
     background-color: rgba(255, 255, 255, 1);
+  }
+
+  .team-boxed .item .box:hover {
+    img {
+      -ms-transform: scale(1.1); /* IE 9 */
+      -webkit-transform: scale(1.1); /* Safari 3-8 */
+
+    }
   }
 
 `
